@@ -1,10 +1,14 @@
 import React from 'react'
 
-function Other() {
+function Other({formData, setFormData}) {
   return (
-    <div>
-      <input type="text" placeholder="Contact Number"/>
-      <input type="text" placeholder="Alternate Contact Number"/>
+    <div className="sign-up-container">
+      <input type="text" placeholder="Contact Number" value = {formData.contactNumber} onChange={(event) =>
+          setFormData({ ...formData, contactNumber: event.target.value })
+        }/>
+      <input type="text" placeholder="Alternate Number" value = {formData.alternateNumber} onChange={(event) =>
+          setFormData({ ...formData, alternateNumber: event.target.value })
+        }/>
     </div>
   )
 }
